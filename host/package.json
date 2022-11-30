@@ -1,0 +1,23 @@
+{
+  "name": "host",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --mode=development",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@nuxt/devalue": "^2.0.0",
+    "@originjs/vite-plugin-federation": "^1.1.11",
+    "one-channel-order-management": "file:../order-management",
+    "one-channel-product-management": "file:../product-management",
+    "pinia": "^2.0.23",
+    "sass": "^1.56.1",
+    "vue": "^3.2.41",
+    "vue-router": "^4.1.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.2",
+    "vite": "^3.1.8"
+  }
+}
