@@ -31,7 +31,6 @@ const currentLayout = computed(() => {
 watch(
   () => route,
   (route) => {
-    console.log(route);
     const newLayout = route.meta.layout;
     if (!newLayout && !route.name) {
       layoutName.value = props.loading;

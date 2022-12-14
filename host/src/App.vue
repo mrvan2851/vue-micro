@@ -1,20 +1,25 @@
 <template>
   <div class="app-container">
-    <VueExtendLayouts /> 
+    <transition name="fade-in" mode="out-in">
+      <div class="app-container-wrapper" v-if="is_loading" key="is_loading" >
+        loading
+      </div>
+      <div class="app-container-wrapper" v-else key="loaded">
+        <VueExtendLayouts /> 
+      </div>
+    </transition>
   </div>
 </template>
 <script setup>
-  import { RouterLink, RouterView , useRoute } from "vue-router";
-  import { defineAsyncComponent  } from "vue";
+  import { computed, ref  } from "vue";
   import VueExtendLayouts from './components/vue-extend-layouts.vue'
-  import Navbar from './components/Navbar.vue'
   import { useLoadingStore } from './stores/loading'
   const loadingStore = useLoadingStore()
-  let router = useRoute()
-
+  const is_loading = computed(()=> loadingStore.is_loading)
 </script>
 
 <style lang="scss" scoped>
   .app-container {
+    
   }
 </style>

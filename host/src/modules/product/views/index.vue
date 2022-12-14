@@ -6,11 +6,12 @@
   //onUnmounted
   import { createApp, ref, onMounted, onUnmounted } from "vue";
   import { useApp, App } from "one-channel-product-management";
-  import { pinia } from "../main.js";
+  import { pinia } from "@/main.js";
   const el = ref();
   const app = createApp(App);
   app.use(pinia);
   onMounted(() => {
+    console.log('onMounted module product');
     app.use(useApp, {
       baseUrl : '/product-management'
     })
